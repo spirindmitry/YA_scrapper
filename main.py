@@ -5,8 +5,8 @@ import json
 
 
 def write_csv(data, name='example'):
-    with open(name + '.csv', 'a') as f:
-        writer = csv.writer(f)
+    with open(name + '.csv', 'a', encoding='cp1251') as f:
+        writer = csv.writer(f, dialect='excel', delimiter=';')
         writer.writerow([data['header'], data['ad'], data['reg']])
     #     reader = csv.reader(f)
     #     row_count = sum(1 for _ in reader)  # fileObject is your csv.reader
